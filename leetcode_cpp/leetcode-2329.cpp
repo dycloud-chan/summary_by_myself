@@ -20,15 +20,16 @@ public:
             cnts.push_back(value);
         }
         sort(cnts.begin(), cnts.end(), [](int a, int b){return a > b;});
-        int ans = 0;
+        int ans = 0, total = 0;
         for (auto ele: cnts) {
-            if (persons - ele < 0) {
+            total += ele;
+            if (total < persons) {
                 ans++;
+            } else {
                 break;
             }
-            persons -= ele;
         }
-        return ans;
+        return ans + 1;
     }
 };
 
