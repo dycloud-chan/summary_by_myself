@@ -42,8 +42,20 @@ WITH r
 DELETE r
 ```
 
+## 6. 查询某个节点的第一层关系的所有节点
+```
+MATCH (n:Person) - [] ->(m:Person) where n.name='陈春全‘ RETURN n, m
+```
+或者
+```
+MATCH (n:Person {name:'陈春全'}) - [] ->(m:Person) RETURN n, m
+```
 
+## 7. 查询所有游离的节点
+```
+MATCH (n:Person) WHERE NOT(n:Person)-[]->(:Person) RETURN n
+```
 
-
-
-
+```
+MATCH (n:Person) WHERE NOT(n:Person)-[]-(:Person) RETURN n
+```
