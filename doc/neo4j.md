@@ -44,11 +44,11 @@ DELETE r
 
 ## 6. 查询某个节点的第一层关系的所有节点
 ```
-MATCH (n:Person) - [] ->(m:Person) where n.name='陈春全‘ RETURN n, m
+MATCH (n:Person) - [] ->(m:Person) where n.name='xxx‘ RETURN n, m
 ```
 或者
 ```
-MATCH (n:Person {name:'陈春全'}) - [] ->(m:Person) RETURN n, m
+MATCH (n:Person {name:'xxx'}) - [] ->(m:Person) RETURN n, m
 ```
 
 ## 7. 查询所有游离的节点
